@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "type": "staff",
+      "username": "Admin",
+      "password": "admin123",
+      "cardUid": "A286FF03"
+    },
+    {
+      "type": "staff",
+      "username": "staff1",
+      "password": "staff123",
+      "cardUid": "530D2349029380"
+    },
+    {
+      "type": "student",
+      "studentId": "S001",
+      "password": "student123",
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "cardUid": "538426E2023F80"
+    },
+    {
+      "type": "student",
+      "studentId": "S002",
+      "password": "student456",
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "cardUid": "53ADFDCE028D80"
+    },
+    {
+      "type": "student",
+      "studentId": "S003",
+      "password": "student789",
+      "name": "David Johnson",
+      "email": "david.johnson@example.com",
+      "cardUid": "5395276302DC80"
+    }
+  ]
+}

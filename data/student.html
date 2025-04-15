@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Dashboard</h1>
+            <div class="user-info">
+                <span id="current-user"></span>
+                <button id="logout-btn" class="btn-small">Logout</button>
+            </div>
+        </header>
+        
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="books">My Books</button>
+            <button class="tab-btn" data-tab="profile">My Profile</button>
+            <button class="tab-btn" data-tab="history">Borrowing History</button>
+        </nav>
+        
+        <main>
+            <!-- Books Tab -->
+            <section id="books" class="tab-content active">
+                <h2>My Borrowed Books</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book ID</th>
+                                <th>Title</th>
+                                <th>Borrow Date</th>
+                                <th>Return Date</th>
+                                <th>Days Left</th>
+                                <th>Penalty (INR)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="borrowed-books-list">
+                            <!-- Borrowed books will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="borrow-section">
+                    <h3>Borrow a Book</h3>
+                    <p>To borrow a book, scan the book's RFID card at the scanner when prompted by the IR sensor.</p>
+                    <button id="check-borrow-card" class="btn">Check Scanned Card</button>
+                    <div id="borrow-status" class="status-box">Waiting for card scan...</div>
+                </div>
+            </section>
+            
+            <!-- Profile Tab -->
+            <section id="profile" class="tab-content">
+                <h2>My Profile</h2>
+                <div id="student-info" class="profile-info">
+                    <!-- Student info will be loaded here -->
+                </div>
+            </section>
+            
+            <!-- History Tab -->
+            <section id="history" class="tab-content">
+                <h2>Borrowing History (Last 6 Months)</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book ID</th>
+                                <th>Title</th>
+                                <th>Borrow Date</th>
+                                <th>Return Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-list">
+                            <!-- History will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

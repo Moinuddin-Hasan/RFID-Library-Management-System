@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <div class="user-info">
+                <span id="current-user"></span>
+                <button id="logout-btn" class="btn-small">Logout</button>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="accounts">User Accounts</button>
+            <button class="tab-btn" data-tab="new-account">Create Account</button>
+            <button class="tab-btn" data-tab="books">Books</button>
+            <button class="tab-btn" data-tab="new-book">Add Book</button>
+        </nav>
+
+        <main>
+            <!-- User Accounts Tab -->
+            <section id="accounts" class="tab-content active">
+                <h2>User Accounts</h2>
+                <div class="table-container">
+                    <table id="accounts-table">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Type</th>
+                                <th>Name</th>
+                                <th>Card UID</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="accounts-list">
+                            <!-- Account data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Create Account Tab -->
+            <section id="new-account" class="tab-content">
+                <h2>Create New Account</h2>
+                <form id="create-account-form">
+                    <div class="form-group">
+                        <label for="account-type">Account Type:</label>
+                        <select id="account-type">
+                            <option value="student">Student</option>
+                            <option value="staff">Staff</option>
+                        </select>
+                    </div>
+                    
+                    <div id="student-fields">
+                        <div class="form-group">
+                            <label for="student-id">Student ID:</label>
+                            <input type="text" id="student-id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-name">Full Name:</label>
+                            <input type="text" id="student-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-email">Email:</label>
+                            <input type="email" id="student-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-password">Password:</label>
+                            <input type="password" id="student-password" required>
+                        </div>
+                    </div>
+                    
+                    <div id="staff-fields" class="hidden">
+                        <div class="form-group">
+                            <label for="staff-username">Username:</label>
+                            <input type="text" id="staff-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="staff-password">Password:</label>
+                            <input type="password" id="staff-password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>RFID Card:</label>
+                        <div id="card-uid-display" class="status-box">No card scanned</div>
+                        <button type="button" id="scan-card-btn" class="btn">Scan Card</button>
+                    </div>
+                    
+                    <button type="submit" class="btn" onclick="console.log('Button clicked'); createAccount(); return false;">Create Account</button>
+                </form>
+            </section>
+            
+            <!-- Books Tab -->
+            <section id="books" class="tab-content">
+                <h2>Book List</h2>
+                <div class="table-container">
+                    <table id="books-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Status</th>
+                                <th>Location</th>
+                                <th>Borrowed By</th>
+                                <th>Return Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="books-list">
+                            <!-- Book data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Add Book Tab -->
+            <section id="new-book" class="tab-content">
+                <h2>Add New Book</h2>
+                <form id="add-book-form">
+                    <div class="form-group">
+                        <label for="book-id">Book ID:</label>
+                        <input type="text" id="book-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-title">Title:</label>
+                        <input type="text" id="book-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-author">Author:</label>
+                        <input type="text" id="book-author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-shelf">Shelf (e.g. R1C2):</label>
+                        <input type="text" id="book-shelf" placeholder="e.g. R1C2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-floor">Floor:</label>
+                        <input type="text" id="book-floor" placeholder="e.g. 1, 2, 3" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>RFID Card:</label>
+                        <div id="book-card-uid" class="status-box">No card scanned</div>
+                        <button type="button" id="scan-book-card" class="btn">Scan Book Card</button>
+                    </div>
+                    
+                    <button type="submit" class="btn">Add Book</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

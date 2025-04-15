@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details - Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Book Details</h1>
+            <div class="nav-buttons">
+                <button id="back-btn" class="btn-small">Back</button>
+                <button id="home-btn" class="btn-small">Home</button>
+            </div>
+        </header>
+        
+        <main>
+            <div id="book-not-found" class="hidden">
+                <h2>Book Not Found</h2>
+                <p>The book with the scanned card could not be found in the system.</p>
+            </div>
+            
+            <div id="book-details" class="book-details">
+                <div class="book-header">
+                    <h2 id="book-title">Book Title</h2>
+                    <span id="book-id" class="book-id">Book ID</span>
+                </div>
+                
+                <div class="book-info-grid">
+                    <div class="info-item">
+                        <label>Author:</label>
+                        <span id="book-author">Author Name</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <label>Status:</label>
+                        <span id="book-status">Available</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <label>Location:</label>
+                        <span id="book-location">R1C2 Floor 2</span>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Card UID:</label>
+                        <span id="book-card-uid">Not available</span>
+                    </div>
+                    
+                    <div class="info-item borrowed-info hidden" id="borrowed-info">
+                        <label>Borrowed By:</label>
+                        <span id="borrowed-by">User Name</span>
+                    </div>
+                    
+                    <div class="info-item borrowed-info hidden" id="return-info">
+                        <label>Return Date:</label>
+                        <span id="return-date">01/01/2025</span>
+                    </div>
+                    
+                    <div class="info-item borrowed-info hidden" id="days-info">
+                        <label>Days Until Return:</label>
+                        <span id="days-left">14</span>
+                    </div>
+                    
+                    <div class="info-item penalty-info hidden" id="penalty-info">
+                        <label>Penalty:</label>
+                        <span id="penalty-amount">0 INR</span>
+                    </div>
+                </div>
+                
+                <div id="book-actions" class="book-actions">
+                    <button id="borrow-btn" class="btn">Borrow This Book</button>
+                    <button id="return-btn" class="btn btn-accent hidden">Return This Book</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

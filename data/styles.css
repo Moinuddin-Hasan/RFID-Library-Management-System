@@ -1,0 +1,351 @@
+/* Optimized styles.css for ESP32 Library Management System */
+/* Performance-focused design with preferred layout elements */
+
+/* Core variables */
+:root {
+  --primary: #3a86ff;
+  --accent: #ff5a5f;
+  --success: #38b000;
+  --danger: #e74c3c;
+  --dark: #2c3e50;
+  --light: #f8f9fa;
+  --gray: #e9ecef;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* System font for better performance */
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Button Styles */
+.btn, .btn-small {
+  padding: 10px 15px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.btn:hover, .btn-small:hover {
+  background-color: #2980b9;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+}
+
+.btn-accent:hover {
+  background-color: #e74c3c;
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.tab-btn.active {
+  border-bottom: 3px solid var(--primary);
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px 0;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Login Container Styles */
+.login-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.login-methods {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.login-method {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.login-method h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* Book Return Section */
+.book-return-section {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.book-return-section h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+/* Status Box */
+.status-box {
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border-left: 4px solid var(--primary);
+}
+
+/* Status indicators */
+.status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-available {
+  background-color: rgba(56, 176, 0, 0.1);
+  color: var(--success);
+}
+
+.status-borrowed {
+  background-color: rgba(255, 90, 95, 0.1);
+  color: var(--accent);
+}
+
+.status-overdue {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--danger);
+}
+
+/* Book Details Styles */
+.book-details {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.book-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.book-id {
+  padding: 5px 10px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.book-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item label {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+.book-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+/* Student & Admin Dashboard Styles */
+.profile-info {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.profile-info div {
+  margin-bottom: 15px;
+}
+
+.profile-info label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.borrow-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Penalty highlighting */
+.text-danger {
+  color: var(--danger);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+/* Nav Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .login-methods {
+      flex-direction: column;
+  }
+  
+  .book-info-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .tabs {
+      flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+  }
+}
